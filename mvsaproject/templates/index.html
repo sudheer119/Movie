@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Host Cloud - Free HTML5 Bootstrap Template</title>
+    {% load static %}
+\    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-host-cloud.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'index' %}"><h2>MR <em>Sentmantal Anlaysis</em></h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About Us</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="functional-buttons">
+            <ul>
+              <li><a href="login.html">Log in</a></li>
+              <li><a href="signup.html">Sign Up</a></li>
+              
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <div class="header-text caption">
+              <h2>Search your Movie</h2>
+              <div id="search-section">
+                <form id="suggestion_form" name="gs" method="POST" action=".">{% csrf_token %}
+                <div class="searchText">
+                  <input type="text" name="q" class="searchText" placeholder="Enter your Movie name here..." autocomplete="on">
+                </div>
+                    <input type="submit" class="main-button"  value="Search Now">
+                 </form>
+               <div class="advSearch_chkbox">
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Banner Ends Here -->
+
+    <!-- Trusted Starts Here -->
+    <div class="trusted-section">
+      <div align="center">
+        <img src="{{ imagelink }}">
+      </div>
+      <div align="center">
+        {% for key, value in data1.items %}
+          <li>{{ key }} : {{ value }}</li>
+        {% endfor %}
+      </div>
+
+   <div class="container">
+          <ul>
+            <li>    <img src="data:image1/png;base64,{{ graph1 }}" alt="" height="350" ,width="350"></li>
+          </ul>
+      </div>
+
+        <div class="container">
+  <h2 class="text-center"><u>1. all ages</u></h2><br>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Rating</th>
+        <th>percentage</th>
+        <th>votes</th>
+      </tr>
+    </thead>
+    <tbody>
+    <!-- jinja2 Technique -->
+    {% for i in table1 %}
+      <tr>
+        <td>{{i.rating}}</td>
+        <td>{{i.percentage}}</td>
+        <td>{{i.votes}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+        <div class="container">
+  <h2 class="text-center"><u>1. Male</u></h2><br>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Rating</th>
+        <th>percentage</th>
+        <th>votes</th>
+      </tr>
+    </thead>
+    <tbody>
+    <!-- jinja2 Technique -->
+    {% for i in table2 %}
+      <tr>
+        <td>{{i.rating}}</td>
+        <td>{{i.percentage}}</td>
+        <td>{{i.votes}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+        <div class="container">
+  <h2 class="text-center"><u>1. Female</u></h2><br>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Rating</th>
+        <th>percentage</th>
+        <th>votes</th>
+      </tr>
+    </thead>
+    <tbody>
+    <!-- jinja2 Technique -->
+    {% for i in table3 %}
+      <tr>
+        <td>{{i.rating}}</td>
+        <td>{{i.percentage}}</td>
+        <td>{{i.votes}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+        <div class="container">
+  <h2 class="text-center"><u>1. all ages</u></h2><br>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>All_Ages</th>
+        <th>lessthan18</th>
+        <th>between18and29</th>
+        <th>between30and44</th>
+        <th>above45</th>
+      </tr>
+    </thead>
+    <tbody>
+    <!-- jinja2 Technique -->
+    {% for i in table4 %}
+      <tr>
+        <td>{{i.All_Ages}}</td>
+        <td>{{i.lessthan18}}</td>
+        <td>{{i.between18and29}}</td>
+        <td>{{i.between30and44}}</td>
+        <td>{{i.above45}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+         <div class="container">
+  <h2 class="text-center"><u>first 5 reviews for the movie</u></h2><br>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>review</th>
+        <th>sentiment</th>
+      </tr>
+    </thead>
+    <tbody>
+    <!-- jinja2 Technique -->
+    {% for i in table5 %}
+      <tr>
+        <td>{{i.review}}</td>
+        <td>{{i.sentiment}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+      <div>
+          <h4>the logostic regression for the review data is {{ lr_bow_report }}</h4>
+        </div>
+    </div>
+    <!-- Trusted Ends Here -->
+
+
+    
+
+
+    
+
+   
+
+
+
+
+    <!-- Footer Starts Here -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>About Us</h2>
+              </div>
+              <p>We are group of five people named jacob,suraj,bunty,vydhika,srestha and we  took step forword to perfom some good sentimental analysis websites using DJANGO</p>
+            </div>
+          </div>
+
+
+
+
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>Useful Links</h2>
+              </div>
+              <ul class="footer-list">
+                <li><a href="https://docs.djangoproject.com/en/3.1/">DJANGO</a></li>
+                <li><a href="https://www.imdb.com/">IMdb</a></li>
+                <li><a href="https://in.bookmyshow.com/offers?gclid=Cj0KCQjwsLWDBhCmARIsAPSL3_3edgiEO_y97TwtveQZWN7l7jFWa6I3Yjj9OduIVw6PoibRamJQLVUaAtyPEALw_wcB">book my show</a></li>
+                <li><a href="contact.html">Customer Support</a></li>
+                <li><a href="https://in.bookmyshow.com/offers?gclid=Cj0KCQjwsLWDBhCmARIsAPSL3_3edgiEO_y97TwtveQZWN7l7jFWa6I3Yjj9OduIVw6PoibRamJQLVUaAtyPEALw_wcB">Latest News</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="footer-item">
+              <div class="footer-heading">
+                <h2>More Information</h2>
+              </div>
+              <ul class="footer-list">
+                <li>Phone: <a href="#">010-020-0560</a></li>
+                <li>Email: <a href="#">mail@company.com</a></li>
+                <li>Support: <a href="#">support@company.com</a></li>
+                <li>Website: <a href="#">www.company.com</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="sub-footer">
+              <p>Copyright &copy; 2020 Cloud Hosting Company
+        - Designed by <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Ends Here -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'assets/js/owl.js' %}"></script>
+    <script src="{% static 'assets/js/accordions.js' %}"></script>
+
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+  </body>
+</html>
